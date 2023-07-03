@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SmartBridge Project</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Strain Analysis Based On Eye Blinking</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Components</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Architecture</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Outcome">Project OutCome</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Contact Us">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <div class="row">
+                    <div class="col-xxl-12" align="center">
+                        <div class="tm-video-container" align="center"> 
+                            <img id="Frames" src="{{ url_for('Video') }}" align="center"> 
+                        </div>
+                    </div>
+                </div>
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Live-Video-Capture</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">From Here Each Frame is Captured.<br>
+                    Then Sent it to the Flask Backend for Procession</p>
+            </div>
+        </header>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Components</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{url_for('static', filename='OpenCV.png')}}" align="middle" alt="..."/>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{url_for('static', filename='Dlib.jpeg')}}" align="middle" alt="..."/>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{url_for('static', filename='Eye_Aspect.png')}}" align="middle" alt="..."/>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{url_for('static', filename='DataT.png')}}" align="middle" alt="..."/>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 5-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{url_for('static', filename='TXtSP.jpeg')}}" align="middle" alt="..."/>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 6-->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{url_for('static', filename='Noti.jpg')}}" align="middle" alt="..."/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">ARCHITECTURE</h2>
+                <div class="row"><img class="img-fluid" src="{{url_for('static', filename='Arch.png')}}" align="middle" alt="..."/></div>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead"><ol>
+                        <li>Video Feed From the Cam is Enrouted Through GStream Pipeline Using Open-CV/Imutils</li>
+                        <li>Each Frame is Stored and Processed As a Grayscale Frame through cv2.cvtColor()Function</li>
+                        <li>Using the Dlib Module We Substitute a Detector and Predictor Function</li>
+                        <li>Detector is Obtained through get_frontal_face_detector and predictor through <strong>shape_predictor() Using Shape_Predictor_68.dat</strong></li>
+                    </ol></p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead"><ol><li>Then From face_utils.FACIAL_LANDMARKS To Obtain Original LeftEye and RightEye Positions</li>
+                        <li>Next We Must Use These and Compare These Coordinates and Find Whether a Eye is Blinked Or Not</li>
+                        <li>Number of Blinks is Calculated and Displayed Through EAR</li>
+                        <li>Then Popup is Sent if Blinks is Lessthan 12 and If Greater Than 36(The 3 Times an Average Guy)</li></ol></p></div>
+                </div>
+                <!-- About Section Button-->
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
+                        <i class="fas fa-download me-2"></i>
+                        Change the Link to GitHub!
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="page-section portfolio" id="Outcome">
+            <h1 class="masthead-heading text-uppercase mb-0">Project Outcome</h1>
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{url_for('static', filename='Noti.jpg')}}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>How to Compile the Project</h5>
+                      <p><ol>
+                        <li>Open the Command Prompt in Administrator Mode(Command Prompt Can be Anaconda/Any Virtual_Environment)</li>
+                        <li>Using Pip Use the Command <strong>pip install -r requirements.txt|</strong>To install all the Required Packages</li>
+                        <li>Then Use <strong>|python app_eye|</strong>to run the Program</li>
+                      </ol></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{url_for('static', filename='Arch.png')}}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Second slide label</h5>
+                      <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{url_for('static', filename='Arch.png')}}" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Third slide label</h5>
+                      <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section portfolio" id="Contact Us">
+        <div class="row bg-danger">
+            <div class="col">
+                <div class="card bg-dark text-white" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='SAI.jpg')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">A.SAI CHARAN(20BDS0354)</h5>
+                      <p class="card-text">Pursuing B.Tech Data Science Specialization.</p>
+                      <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fa-brands fa-github fa-spin fa-spin-reverse fa-2xl"></i></a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card bg-dark text-white" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">C.KEERTHI REDDY(20BBS0023)</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fa-brands fa-github fa-spin fa-spin-reverse fa-2xl"></i></a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card bg-dark text-white" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Anshu Reddy Ashanna(20BBS0141)
+                    </h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in fa-spin fa-spin-reverse"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fa-brands fa-github fa-spin fa-spin-reverse fa-2xl"></i></a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card bg-dark text-white" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">ABHINAV KAMBOJ(20BDS0351)
+                    </h5>
+                      <p class="card-text">Pursuing B.Tech Data Science Specialization.</p>
+                      <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f fa-spin fa-spin-reverse"></i></a>
+                      <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter fa-spin fa-spin-reverse"></i></a>
+                      <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in fa-spin fa-spin-reverse"></i></a>
+                      <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fa-brands fa-github fa-spin fa-spin-reverse fa-2xl"></i></a>
+                   </div>
+            </div>
+        </div>
+    </section>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><strong>Thanks For Visiting Our Site</strong></div>
+        </div>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Open-CV For Video Processing</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/OpenCV.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        We Use Open-CV and ImUtils For Capturing the VideoStream or Giving the Audio File as Input to the StreamProcessor
+                                        OpenCV – Open Source Computer Vision. It is one of the most widely used tools for computer vision and image processing tasks. It is used in various applications such as face detection, video capturing, tracking moving objects, object disclosure, nowadays in Covid applications such as face mask detection, social distancing, and many more
+                                        <ul><li>Edge Detection and Image Gradients</li>
+                                            <li>Dilation, Opening, Closing, And Erosion
+                                                Perspective Transformation
+                                                Image Pyramids
+                                                
+                                                
+                                               </li>  
+                                            <li> Line Detection Using Hough Lines
+                                                Finding Corners
+                                                Counting Circles And Ellipses</li> 
+                                            <li>Thresholding, Adaptive Thresholding, And Binarization
+                                                Sharpening
+                                                Blurring
+                                                Contours</li> 
+                                            <li>
+                                                Cropping
+                                                Scaling, Interpolations, And Re-Sizing
+                                            </li>
+                                        </ul>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">DLib-Shape-Predictor_68</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Dlib.jpeg" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">This example program shows how to find frontal human faces in an image and
+                                        #   estimate their pose.  The pose takes the form of 68 landmarks.  These are
+                                        #   points on the face such as the corners of the mouth, along the eyebrows, on
+                                        #   the eyes, and so forth.
+                                        #
+                                        #   The face detector we use is made using the classic Histogram of Oriented
+                                        #   Gradients (HOG) feature combined with a linear classifier, an image pyramid,
+                                        #   and sliding window detection scheme.  The pose estimator was created by
+                                        #   using dlib's implementation of the paper:
+                                        #      One Millisecond Face Alignment with an Ensemble of Regression Trees by
+                                        #      Vahid Kazemi and Josephine Sullivan, CVPR 2014
+                                        #   and was trained on the iBUG 300-W face landmark dataset
+                                        So These are Used to Detect all Important Features on The Face 
+                                        <ul><li>From Index 38 to 47 We Can Find Eye Indexes Which are Highlighted In Green Above</li></ul>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">EAR and Euclidean Distance</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{{url_for('static', filename='Eye_Aspect.png')}}"" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4"><ol><li>
+                                        Now let us loop over each of the faces in the frame and then apply facial landmark detection to each of them:
+
+                                    </li>
+                                    <li>
+                                        Line 133 determines the facial landmarks for the face region, while Line 133 converts these (x, y)-coordinates to a NumPy array.
+                                        Line 134-135 Extracting (x, y)-coordinates for both the left and right eye, respectively.
+                                    </li>
+                                    <li>
+                                        Line136-137 Computing ear value for both the left and right eye, respectively by using the predefined function eye_aspect_ratio(eye).
+                                    </li>
+                                    <li>
+                                        Compute the convex hull for the left and right eye using cv3 inbuilt function convexHull, then visualize each of the eyes using the drawCountours
+                                    </li></ol>
+                                    <strong>EAR(Eye_Aspect_Ratio)</strong>
+                                    <ul>
+                                        <li>
+                                            The Eye Aspect Ratio, or EAR, is a scalar value that responds, particularly for opening and closing the eyes.
+                                        </li>
+                                        <li>
+                                            During the flashing process, we can see that the EAR value grows rapidly or decreases significantly. 
+                                        </li>
+                                        <li>
+                                            tudies in the past have employed a predetermined EAR threshold to establish when subjects blink (EAR threshold at 0.2). This approach is impractical when dealing with a wide range of individuals, due to inter-subject variation in appearance and features such as natural eye openness, as in this study. Our works used an EAR threshold value to detect a rapid increase or decrease in the EAR value caused by blinking, based on the findings of previous studies.
+
+                                        </li>
+                                    </ul>
+                                    𝐸𝐴𝑅=∥𝑃2−𝑃6∥+∥𝑃3−𝑃5∥2∥𝑃1−𝑃4∥
+                                        
+                                        
+                                        
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Scipy Date-Time and Random Module</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{{url_for('static', filename='DataT.png')}}">
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4"><ul>
+                                        <li>Simplifies the Calculation</li>
+                                        <li>Euclidean Distance is Interpolated Using Scipy.Spatial Libraries</li>
+                                        <li>Numpy For Array Rotations and Manipulations</li>
+                                        <li>date-Time Module is Used For Recording and Notifying the User With in Specified Time Frame</li>
+                                    </ul></p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Text-To-Speech</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{{url_for('static', filename='TXtSP.jpeg')}}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        <ol>
+                                            <li>gTTS(Google-Text to Service) is an NLP Service Which Has Many Versions of Voices Both Male and Female</li>
+                                            <li>We Can Pass a General English Statement and Obtain it as a Object</li>
+                                            <li>Then Object Can Be Stored Anywhere With SomeName</li>
+                                            <li>To Again Access the File Which can Be Stored as .mp3/.wav</li>
+                                            <li>Then We Use Playsound Library to Play the Sound Object Stored in mp3/wav</li>
+                                        </ol>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Toast Notifications</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="{{url_for('static', filename='Noti.jpg')}}"" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">We Use Notifier and Winotify to Put Toast Notifications On Any Platform That Supports Python
+                                        <br>So Here We Used Looping Audio So As to Alert the User Using The Playsound Voice Generated Above.
+                                        <br>And a Toast Notification According To Mood and With a Qoute and Helpline is Generated.
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
